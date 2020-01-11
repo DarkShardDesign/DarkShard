@@ -1,0 +1,43 @@
+{
+  "name": "DarkShard",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "index.html",
+  "repository": "git@github.com:DarkShardDesign/DarkShard.git",
+  "author": "Sean Przybyla",
+  "license": "MIT",
+  "product": {
+    "title": "The DarkShard"
+  },
+  "scripts": {
+    "build": "webpack --watch",
+    "dev": "start webpack --watch",
+    "setup": "yarn run build-server && start yarn run dockers",
+    "dockers": "cd setup/dev && docker-compose up --build",
+    "build-server": "cd ../DarkShardServer && yarn run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@webpack-cli/init": "0.2.2",
+    "autoprefixer": "^9.3.1",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "css-loader": "^3.4.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "exports-loader": "^0.7.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.13.0",
+    "postcss-cli": "^6.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.2",
+    "terser-webpack-plugin": "^2.3.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "workbox-webpack-plugin": "^4.3.1"
+  }
+}
