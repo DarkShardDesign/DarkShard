@@ -1,15 +1,5 @@
-# 🚀 Welcome to your new awesome project!
+# DarkShard Front end and HTML Server
 
-This project has been created using **webpack scaffold**, you can now run
+This repository is intended to work as part of the larger DarkShard Design project and should be launch using the DarkShard_Setup scripts
 
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+`https://github.com/DarkShardDesign/DarkShard_setup`
