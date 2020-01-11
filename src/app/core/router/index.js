@@ -1,4 +1,5 @@
 import { isString, isFunction } from '../utils/typechecks';
+import WebComponent from '../web-component';
 
 export default class Router {
     constructor () {
@@ -37,8 +38,8 @@ export default class Router {
     mountComponent(route, path) {
         if(this.currentComponent.unmount) this.currentComponent.unmount();
         this.currentComponent = new route.component();
-        this.currentComponent.register();
-        this.currentComponent.mount(path);
+        WebComponent.register(this.currentComponent);
+        this.currentComponent.mount(this.currentComponent, path);
     }
 
     /**

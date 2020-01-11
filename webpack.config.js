@@ -39,8 +39,7 @@ const clientConfig = {
 			'./src/app/main.js',
 			'./src/app/assets/styles/main.scss'
 		],
-		"js/vendor": './src/vendor.js',
-		// "server": "./src/server/server.js"
+		"js/vendor": './src/vendor.js'
 	},
 
 	plugins: [
@@ -53,7 +52,7 @@ const clientConfig = {
 		new HtmlWebpackPlugin({
 			title: package.product.title,
 			filename: 'index.html',
-			template: 'src/app/assets/index.template.html',
+			template: 'src/app/assets/index.hbs',
 			inject: false
 		})
 	],
@@ -64,6 +63,10 @@ const clientConfig = {
 				test: /.(js|jsx)$/,
 				include: [path.resolve(__dirname, 'src')],
 				loader: 'babel-loader'
+			},
+			{
+				test: /.(template.html)$/,
+				use: 'raw-loader'
 			},
 			{
 				test: /.(scss|css)$/,
@@ -108,11 +111,6 @@ const clientConfig = {
 			minSize: 30000,
 			name: true
 		}
-	},
-
-	node: {
-		fs: 'empty',
-		net: 'empty'
 	}
 };
 
