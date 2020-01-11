@@ -10,7 +10,7 @@
     "title": "The DarkShard"
   },
   "scripts": {
-    "build": "webpack --watch",
+    "build": "webpack",
     "dev": "start webpack --watch",
     "setup": "yarn run build-server && start yarn run dockers",
     "dockers": "cd setup/dev && docker-compose up --build",

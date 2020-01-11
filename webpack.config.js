@@ -30,8 +30,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const package = require('./package.json');
 
-module.exports = {
+const clientConfig = {
 	mode: 'development',
+	target: 'web',
 
 	entry: {
 		"js/main": [
@@ -39,7 +40,7 @@ module.exports = {
 			'./src/app/assets/styles/main.scss'
 		],
 		"js/vendor": './src/vendor.js',
-		"server": "./src/server/server.js"
+		// "server": "./src/server/server.js"
 	},
 
 	plugins: [
@@ -114,3 +115,12 @@ module.exports = {
 		net: 'empty'
 	}
 };
+
+const serverConfig = {
+	target: 'node',
+	entry: {
+		"server": "./src/server/server.js"
+	},
+}
+
+module.exports = [ serverConfig, clientConfig ];

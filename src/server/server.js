@@ -16,7 +16,7 @@ app.use(express.static(path.resolve('/site')))
 // if that fails server the index.html file
 // and let the client app handle the routing
 app.get('*', function (request, response) {
-  response.sendFile(path.resolve(__dirname, './index.html'));
+  response.sendFile(path.resolve(__dirname, './site/index.html'));
 });
 
 app.listen(PORT, HOST);
