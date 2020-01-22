@@ -1,3 +1,13 @@
 body {
     background-color: blue;
 }
+
+html {
+    --test-color: green;
+    --test-background-color: red;
+}
+
+.my-text {
+    color: purple;
+    background-color: yellow;
+}
